@@ -1,0 +1,25 @@
+# https://help.github.com/en/articles/metadata-syntax-for-github-actions
+
+author: 'pplotka'
+
+branding:
+  icon: 'check'
+  color: 'blue'
+
+description: 'Run local php security checker via GitHub Actions.'
+
+name: 'Local PHP Security Checker'
+
+inputs:
+  path:
+    required: false
+    default: false
+    description: 'Pass to check a specific directory'
+  format:
+    required: false
+    default: 'ansi'
+    description: 'Output format'
+
+runs:
+  using: 'docker'
+  image: 'docker://pplotka/local-php-security-checker-github-actions'
