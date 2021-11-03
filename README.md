@@ -9,7 +9,7 @@ name: Security scanner
 on: [push, pull_request]
 
 jobs:
-  psalm:
+  security:
     name: Local PHP Security Checker
     runs-on: ubuntu-latest
     steps:
