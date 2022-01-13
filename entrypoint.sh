@@ -8,7 +8,7 @@ fi
 
 FORMAT=""
 if [ ! -z "${INPUT_FORMAT}" ]; then
-    FORMAT="--path=${INPUT_FORMAT}"
+    FORMAT="--format=${INPUT_FORMAT}"
 fi
 
 /security-checker --update-cache
