@@ -19,6 +19,9 @@ inputs:
     required: false
     default: 'ansi'
     description: 'Output format'
+outputs:
+  security:
+    description: 'The detected vulnerabilities in specified format'
 
 runs:
   using: 'docker'

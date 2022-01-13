@@ -44,6 +44,17 @@ By default, the output is optimized for terminals, change it via the `format` pa
 +         format: markdown
 ```
 
+You might also get the output (with vulnerabilities) in specified format and do something with them in another step:
+```diff
+      - name: Local PHP Security Checker
++       id: local_php_security_checker
+        uses: docker://pplotka/local-php-security-checker-github-actions
+        with:
+         format: markdown
++     - name: Display the output
++       run: echo ${{ steps.local_php_security_checker.outputs.security }}
+```
+
 ## Use without GitHub Actions
 The Docker Image is located here: https://hub.docker.com/r/pplotka/local-php-security-checker-github-actions
 
