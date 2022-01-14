@@ -52,7 +52,7 @@ You might also get the output (with vulnerabilities) in specified format and do 
         with:
          format: markdown
 +     - name: Display the output
-+       run: echo ${{ steps.local_php_security_checker.outputs.security }}
++       run: echo "${{ steps.local_php_security_checker.outputs.security }}"
 ```
 
 ## Use without GitHub Actions
