@@ -12,4 +12,9 @@ if [ ! -z "${INPUT_FORMAT}" ]; then
 fi
 
 /security-checker --update-cache
-/security-checker ${PATH} ${FORMAT} $*
+output=$(/security-checker ${PATH} ${FORMAT} $*)
+echo "$output"
+
+if [ ! -z "${GITHUB_ACTIONS}" ]; then
+    echo "::set-output name=security::$output"
+fi
