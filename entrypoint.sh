@@ -16,5 +16,8 @@ output=$(/security-checker ${PATH} ${FORMAT} $*)
 echo "$output"
 
 if [ ! -z "${GITHUB_ACTIONS}" ]; then
+    output="${output//'%'/'%25'}"
+    output="${output//$'\n'/'%0A'}"
+    output="${output//$'\r'/'%0D'}"
     echo "::set-output name=security::$output"
 fi
