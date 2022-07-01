@@ -11,6 +11,10 @@ description: 'Run local php security checker via GitHub Actions.'
 name: 'Local PHP Security Checker'
 
 inputs:
+  cache_dir:
+    required: false
+    default: false
+    description: 'Pass to use a custom cache directory'
   path:
     required: false
     default: false
