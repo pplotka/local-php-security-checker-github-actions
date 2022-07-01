@@ -55,6 +55,18 @@ You might also get the output (with vulnerabilities) in specified format and do 
 +       run: echo "${{ steps.local_php_security_checker.outputs.security }}"
 ```
 
+You can also pass a `cache_dir` to cache the vulnerability database and speed up security checks:
+```diff
++     - uses: actions/cache@v3
++       with:
++         path: ~/.cache/local-php-security-checker
++         key: local-php-security-checker-cache
+      - name: Local PHP Security Checker
+        uses: docker://pplotka/local-php-security-checker-github-actions
++       with:
++         cache_dir: ~/.cache/local-php-security-checker
+```
+
 ## Use without GitHub Actions
 The Docker Image is located here: https://hub.docker.com/r/pplotka/local-php-security-checker-github-actions
 
